@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "RigLight",
+    "slug": "riglight-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "riglight",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#151B24"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.riglight.app",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "RigLight uses Bluetooth to connect to and control your truck's LED tire lights.",
+        "NSBluetoothPeripheralUsageDescription": "RigLight uses Bluetooth to connect to and control your truck's LED tire lights."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#151B24"
+      },
+      "package": "com.riglight.app",
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_CONNECT",
+        "BLUETOOTH_SCAN",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "modes": ["peripheral", "central"],
+          "bluetoothAlwaysPermission": "RigLight uses Bluetooth to connect to your truck's LED lights."
+        }
+      ],
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
